@@ -1,0 +1,29 @@
+FAQ
+
+1. This extension created in response to the need to remove content tree node
+subtree(s) by a range of NodeID start and end IDs
+
+- The admin2 design is presently by default limited to removing nodes in pagination default
+limits of 50 at a time.
+
+- The default eZ Publish command line script to remove content tree node subtrees
+requires you specify NodeIDs in a comma separated list.
+
+1.1. This solution provides a script based on the above script but which only requires
+you specify the start and end NodeIDs.
+
+- The script calculates the range of NodeIDs from starting NodeID to ending NodeID
+and removes the node subtrees using the same logic as the above default script.
+
+As mentioned throughout the documentation this script is based on the
+eZ Publish default command line script, './bin/php/ezsubtreeremove.php'
+
+
+2. This extension was created in response to a need to remove subtrees
+of content tree nodes quickly and effectively.
+
+IE: Not 50 at a time in admin2 or by specific NodeID using default scripts provided
+
+2.1 The actual content tree nodes created in a range were created automatically
+in order (ie: no other site activity) by the bcloremipsum extension, http://projects.ez.no/bcloremipsum
+

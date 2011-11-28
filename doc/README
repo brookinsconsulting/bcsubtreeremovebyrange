@@ -1,0 +1,113 @@
+BC Subtree Remove By Range extension README
+
+What is the BC Subtree Remove By Range extension?
+================================
+
+BC Subtree Remove By Range is a true eZ Publish extension
+that provides command line script to remove content tree
+node subtrees by providing a range start and end parameter
+of NodeIDs. The nodes which exist will be removed from eZ Publish.
+
+
+BC Subtree Remove By Range version
+=======================
+
+The current version of BC Subtree Remove By Range is 0.0.1
+Last Major update: November 27, 2011
+
+You can find details about changes for this
+version in doc/changelogs/CHANGELOG-0.0.1
+
+
+License
+=======
+
+This software is licensed under the GNU General Public License.
+
+The complete license agreement is included in the doc/LICENSE file.
+
+For more information or questions please contact license@brookinsconsulting.com
+
+
+Requirements
+============
+
+The following requirements exists for using BC Subtree Remove By Range extension:
+
+o  eZ Publish version:
+
+   Make sure you use eZ Publish version 4.x or higher. eZ Publish 4.6+ is recommended.
+
+o  PHP version:
+
+   Make sure you have PHP 5.x or higher.
+
+
+Installation
+============
+
+Details on installing BC Subtree Remove By Range located in the file doc/INSTALL.
+
+
+Usage
+============
+
+The remove subtree by range of NodeIDs command line script: ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php
+
+This script will remove the node subtrees within the range specified by required parameters
+'--range-start-node-id' and 'range-end-node-id' which are to be specified by script user to indicate the range of nodes to remove.
+
+cd /path/to/ezpublish/;
+
+Use --help option to review available command line options:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --help
+
+
+Primary Example Usage:
+
+In this example the parameter --ignore-trash is omitted as it is by default enabled and trash is not used all information about the node subtree will be removed from the system completely:
+ 
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000
+
+
+Examples alternatives:
+
+In this example the parameter --ignore-trash=true is specified as an example usage when you prefer to enable it implicitly. This option is true by default:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true
+
+In this example the parameter --ignore-trash=false is specified as an example usage for when you must (no known use case for this feature) move nodes to trash and not remove all records of the nodes from the system, in effect you can restore the nodes later from the trash when you use the following option:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=false
+
+In this example the parameter --remove-children=true is specified as an example usage for when you must both the nodes within the specified range of NodeIDs and any child nodes per node subtree from the system. This option is true by default:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=true
+
+In this example the parameter --remove-children=false is specified as an example usage for when you must only remove nodes within the specified range of NodeIDs from the system:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=false
+
+
+Troubleshooting
+===============
+
+1. Read the FAQ
+   ------------
+
+   Some problems are more common than others. The most common ones
+   are listed in the the FAQ.
+
+2. Read the USAGE
+   ------------
+
+   Some problems are more common than others. The most ways to use the solution are documented
+   in the the USAGE.
+
+3. Support
+   -------
+
+   If you have find any problems not handled by this document or the FAQ you
+   can contact Brookins Consulting through the support system:
+   http://brookinsconsulting.com/contact

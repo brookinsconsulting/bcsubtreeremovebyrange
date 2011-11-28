@@ -1,0 +1,137 @@
+BC Subtree Remove By Range extension USAGE
+
+1. Introduction
+   ------------
+
+1.1 What use is the BC Subtree Remove By Range extension to you?
+    --------------------------------------------------
+
+    1. Remove nodes by range of NodeIDs with ease.
+
+1.2 What is covered in this document?
+    ---------------------------------
+
+    - Usage of the extension (installed properly)
+
+1.3 What not covered in this document?
+    ----------------------------------
+
+    - Introduction, for this please see doc/README
+    - Requirements, for this please see doc/INSTALL
+    - Installation, for this please see doc/INSTALL
+    - Configuration, for this please see http://docs.ez.no
+
+2. Usage
+   -----
+
+2.1 Usage: Removal of content tree nodes by range of NodeIDs
+    -------------------------------------------------
+
+2.1.1 Enable Extension
+      ----------------
+
+      Simply enable this extension in your eZ Publish installation.
+
+2.1.2 Obtain starting and ending NodeIDs
+      ----------------------------
+
+      Simply use your installations eZ Publish admin siteaccess to obtain the NodeIDs of the content tree node subtrees you wish to remove.
+
+2.1.3 Run BC Subtree Remove By Range command line script
+      -------------------------------------------
+
+      Prepare the command line and required arguments.
+      
+      Run the command
+
+2.1.4 Example usage of the BC Subtree Remove By Range command line script
+      -------------------------------------------------------------------------------------
+
+      The remove subtree by range of NodeIDs command line script: ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php
+
+      This script will remove the node subtrees within the range specified by required parameters
+      '--range-start-node-id' and 'range-end-node-id' which are to be specified by script user to indicate the range of nodes to remove.
+
+      cd /path/to/ezpublish/;
+
+      Use --help option to review available command line options:
+
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --help
+
+2.1.5 Example primary usage of the BC Subtree Remove By Range command line script
+      -------------------------------------------------------------------------------------
+
+      In this example the parameter --ignore-trash is omitted as it is by default enabled and trash is not used all information about the node subtree will be removed from the system completely:
+ 
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000
+
+2.1.6 Example usage alternatives of the BC Subtree Remove By Range command line script
+      -------------------------------------------------------------------------------------
+
+      In this example the parameter --ignore-trash=true is specified as an example usage when you prefer to enable it implicitly. This option is true by default:
+
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true
+
+      In this example the parameter --ignore-trash=false is specified as an example usage for when you must (no known use case for this feature) move nodes to trash and not remove all records of the nodes from the system, in effect you can restore the nodes later from the trash when you use the following option:
+
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=false
+
+      In this example the parameter --remove-children=true is specified as an example usage for when you must both the nodes within the specified range of NodeIDs and any child nodes per node subtree from the system. This option is true by default:
+
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=true
+
+      In this example the parameter --remove-children=false is specified as an example usage for when you must only remove nodes within the specified range of NodeIDs from the system:
+
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=false
+
+2.1.7 Review
+      ------
+
+      Test. Test to ensure yourself that the resulting execution has completed successfully
+      and all nodes specified by the range have been removed from the content tree.
+
+      Review the text output of the command's execution results.
+      
+      Review the results of running the command by directly looking up the nodes which should
+      now no longer exist in the system as the script should have removed them from the eZ Publish content tree
+
+3.3 Your Done!
+    ----------
+
+   Take a short 15min break away from the computer.
+
+   Do something which rewards your success in the real world.
+
+   Have a glass of orange juice; Look out the nearest window and day dream :)
+
+4. Further Reading
+   ---------------
+
+   We recommend reading more about the Google Analytics Service.
+
+   * The default eZ Publish subtreeremove script
+   http://doc.ez.no/eZ-Publish/Technical-manual/4.x/Reference/Scripts/Generic/ezsubtreeremove.php
+ 
+   * The content.ini:RemoveSettings:MaxNodesRemoveSubtree settings
+   http://doc.ez.no/eZ-Publish/Technical-manual/4.x/Reference/Configuration-files/content.ini/RemoveSettings/MaxNodesRemoveSubtree
+
+   Related eZ Community share.ez.no forum threads
+   http://share.ez.no/forums/general/deleting-many-objects
+
+5. Troubleshooting
+   ---------------
+
+5.1 Read the FAQ
+    ------------
+
+    Some problems are more common than others. The most common ones
+    are listed in the doc/FAQ.
+
+5.2 Support
+    -------
+
+    If you have find any problems not handled by this document or the FAQ you
+    can contact Brookins Consulting through the support system:
+
+    http://brookinsconsulting.com/contact
+

@@ -1,0 +1,141 @@
+BC Subtree Remove By Range extension INSTALL
+
+Introduction
+============
+
+1. What is the BC Subtree Remove By Range extension?
+   ------------------------------------------------
+
+   BC Subtree Remove By Range is a true eZ Publish extension that
+   provides command line script to remove content tree node subtrees
+   by providing a range start and end parameter of NodeIDs.
+   The nodes which exist will be removed from eZ Publish.
+
+   For more information about this extension please read the doc/README file.
+
+1. License
+   -------
+
+   BC Subtree Remove By Range is licensed under the GNU General Public License.
+
+   The GNU GPL gives you the right to use, modify and redistribute
+   BC Subtree Remove By Range under certain conditions. The GNU GPL license
+   is distributed with the software, see the file doc/LICENCE.
+   It is also available at http://www.gnu.org/licenses/gpl.txt
+
+   Using BC Subtree Remove By Range under the terms of the GNU GPL is free (as in freedom).
+
+   For more information or questions please contact
+   license@brookinsconsulting.com
+
+2. Requirements
+   ------------
+
+   The following requirements exists for using BC Subtree Remove By Range extension:
+
+   o  eZ Publish version:
+
+      Make sure you use eZ Publish version 4.x or higher.
+
+      eZ Publish 2011.10 (4.6+) is recommended.
+
+   o  PHP version:
+
+      Make sure you have PHP 5.x or higher.
+
+
+Getting eZ Publish
+==================
+
+You can download a version of eZ Publish from share.ez.no,
+you will find the various versions at:
+
+http://share.ez.no/download
+
+NOTE: You will only require eZ Publish 4.x or higher (if you have a more recent version)
+
+Information on the installation of eZ Publish can be found at:
+http://doc.ez.no/eZ-Publish/Technical-manual/4.6/Installation
+and
+http://doc.ez.no
+http://share.ez.no
+
+
+Installing BC Subtree Remove By Range extension
+==============================================
+
+1. Copy the package into the `extension' directory
+   in the root of your eZ Publish installation.
+
+2. Unpack the files in the distribution. The command
+   necessary is depends on the file you downloaded.
+   [tar.gz]:
+   $ tar -zxvf bcsubtreeremovebyrange-0_0_1.tar.gz
+   [zip]:
+   $ unzip bcsubtreeremovebyrange-0_0_1.tar.zip
+
+3. No further actions needed. Simply run scripts as needed
+
+
+Usage
+==============================
+
+The remove subtree by range of NodeIDs command line script: ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php
+
+This script will remove the node subtrees within the range specified by required parameters
+'--range-start-node-id' and 'range-end-node-id' which are to be specified by script user to indicate the range of nodes to remove.
+
+cd /path/to/ezpublish/;
+
+Use --help option to review available command line options:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --help
+
+
+Primary Example Usage:
+
+In this example the parameter --ignore-trash is omitted as it is by default enabled and trash is not used all information about the node subtree will be removed from the system completely:
+ 
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000
+
+
+Examples alternatives:
+
+In this example the parameter --ignore-trash=true is specified as an example usage when you prefer to enable it implicitly. This option is true by default:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true
+
+In this example the parameter --ignore-trash=false is specified as an example usage for when you must (no known use case for this feature) move nodes to trash and not remove all records of the nodes from the system, in effect you can restore the nodes later from the trash when you use the following option:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=false
+
+In this example the parameter --remove-children=true is specified as an example usage for when you must both the nodes within the specified range of NodeIDs and any child nodes per node subtree from the system. This option is true by default:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=true
+
+In this example the parameter --remove-children=false is specified as an example usage for when you must only remove nodes within the specified range of NodeIDs from the system:
+
+./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=false
+
+
+Troubleshooting
+===============
+
+1. Read the FAQ
+   ------------
+
+   Some problems are more common than others. The most common ones are listed
+   in the the doc/FAQ.
+
+2. Read the USAGE
+   ------------
+
+   Some problems are more common than others. The most ways to use the solution are documented
+   in the the doc/USAGE.
+
+3. Support
+   -------
+
+   If you have find any problems not handled by this document or the FAQ you
+   can contact Brookins Consulting trough the support system:
+   http://brookinsconsulting.com/contact
