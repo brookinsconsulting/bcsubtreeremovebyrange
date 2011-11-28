@@ -47,7 +47,7 @@ BC Subtree Remove By Range extension USAGE
 2.1.4 Example usage of the BC Subtree Remove By Range command line script
       -------------------------------------------------------------------------------------
 
-      The remove subtree by range of NodeIDs command line script: ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php
+      The remove subtree by range of NodeIDs command line script: ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrange.php
 
       This script will remove the node subtrees within the range specified by required parameters
       '--range-start-node-id' and 'range-end-node-id' which are to be specified by script user to indicate the range of nodes to remove.
@@ -56,33 +56,33 @@ BC Subtree Remove By Range extension USAGE
 
       Use --help option to review available command line options:
 
-      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --help
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrange.php --siteaccess ezwebin_site_user --help
 
 2.1.5 Example primary usage of the BC Subtree Remove By Range command line script
       -------------------------------------------------------------------------------------
 
       In this example the parameter --ignore-trash is omitted as it is by default enabled and trash is not used all information about the node subtree will be removed from the system completely:
  
-      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrange.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000
 
 2.1.6 Example usage alternatives of the BC Subtree Remove By Range command line script
       -------------------------------------------------------------------------------------
 
       In this example the parameter --ignore-trash=true is specified as an example usage when you prefer to enable it implicitly. This option is true by default:
 
-      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrange.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true
 
       In this example the parameter --ignore-trash=false is specified as an example usage for when you must (no known use case for this feature) move nodes to trash and not remove all records of the nodes from the system, in effect you can restore the nodes later from the trash when you use the following option:
 
-      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=false
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrange.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=false
 
       In this example the parameter --remove-children=true is specified as an example usage for when you must both the nodes within the specified range of NodeIDs and any child nodes per node subtree from the system. This option is true by default:
 
-      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=true
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrange.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=true
 
       In this example the parameter --remove-children=false is specified as an example usage for when you must only remove nodes within the specified range of NodeIDs from the system:
 
-      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrangecreate.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=false
+      ./extension/bcsubtreeremovebyrange/bin/php/bcsubtreeremovebyrange.php --siteaccess ezwebin_site_user --range-start-node-id=4000 --range-end-node-id=30000000 --ignore-trash=true --remove-children=false
 
 2.1.7 Review
       ------
